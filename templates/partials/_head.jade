@@ -1,0 +1,41 @@
+if title
+  title= title
+else
+  title= metalsmith.title
+
+meta(charset='UTF-8')
+meta(content='width=device-width, initial-scale=1', name='viewport')
+meta(http-equiv='X-UA-Compatible', content='IE=edge')
+meta(name='theme-color', content='#005c82')
+  
+meta(name='description', content=description ? description : metalsmith.description)
+    
+meta(name='keywords', content=keywords ? keywords + metalsmith.keywords : metalsmith.keywords)
+
+// Favicons
+link(rel='apple-touch-icon-precomposed', sizes='57x57', href='/images/favicon-57.png')
+link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/images/favicon-114.png')
+link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/images/favicon-72.png')
+link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/images/favicon-144.png')
+link(rel='apple-touch-icon-precomposed', sizes='60x60', href='/images/favicon-60.png')
+link(rel='apple-touch-icon-precomposed', sizes='120x120', href='/images/favicon-120.png')
+link(rel='apple-touch-icon-precomposed', sizes='76x76', href='/images/favicon-76.png')
+link(rel='apple-touch-icon-precomposed', sizes='152x152', href='/images/favicon-152.png')
+link(rel='icon', type='image/png', href='/images/favicon-196.png', sizes='196x196')
+link(rel='icon', type='image/png', href='/images/favicon-96.png', sizes='96x96')
+link(rel='icon', type='image/png', href='/images/favicon-32.png', sizes='32x32')
+link(rel='icon', type='image/png', href='/images/favicon-16.png', sizes='16x16')
+link(rel='icon', type='image/png', href='/images/favicon-128.png', sizes='128x128')
+meta(name='application-name', content='Sea of Green Hydrogardens')
+meta(name='msapplication-TileColor', content='#0091b2')
+meta(name='msapplication-TileImage', content='/images/ms-favicon-144.png')
+meta(name='msapplication-square70x70logo', content='/images/ms-favicon-70.png')
+meta(name='msapplication-square150x150logo', content='/images/ms-favicon-150.png')
+meta(name='msapplication-wide310x150logo', content='/images/ms-favicon-310x150.png')
+meta(name='msapplication-square310x310logo', content='/images/ms-favicon-310.png')
+
+// Stylesheets
+link(href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+link(href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+//- link(rel='stylesheet', href='//sea-of-green.com/fonts/overlook-base64.css')
+link(rel='stylesheet', href='/css/main.css')

@@ -1,0 +1,246 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for the input-bar component.
+// -----------------------------------------------------------------------------
+// User input with inline submit button. Notice that the bar is the full width of the container.
+// Default:
+// <form class="input-bar">
+//   <input type="text" placeholder="An Input Bar" />
+//   <button></button>
+// </form>
+// Blue Email Bar:
+// <form class="input input-bar--blue input-bar--email">
+//   <input type="email" placeholder="Sign Up for Our Newsletter" />
+//   <button></button>
+// </form>
+// link: http://codepen.io/lowmess/full/waRoeB/
+
+
+.input-bar {
+  @include clearfix;
+
+  // width: 100%;
+  // max-width: $measure;
+  margin: $base-font-size auto;
+
+  input {
+    box-sizing: border-box; // input[type="search"] fix
+
+    float: left;
+
+    width: calc(100% - 60px);
+    height: 2.75rem;
+    padding: 0.75rem 1rem;
+
+    border-radius: 7px;
+    border: 1px solid $gray-3;
+    border-right: none;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    background: $gray-1;
+
+    &::placeholder {
+      color: $gray-3;
+    }
+  }
+
+  button {
+    float: left;
+
+    width: 60px;
+    height: 2.75rem;
+    //padding: 0.5rem 1rem;
+    padding: .3rem 1.1rem 0.2rem 0.05rem;
+
+    border-radius: 7px;
+    border: 1px solid $gray-3;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    background: $gray-1;
+    background: linear-gradient(to bottom, $gray-1, $gray-1);
+    color: $gray-3;
+
+    cursor: pointer;
+
+    &:after {
+      @include font(symbol);
+
+      content: '\f0da'; // caret right
+
+      font-size: $h3-font-size;
+    }
+
+    @include on-event {
+      color: $gray-5;
+      background: $gray-2;
+      background: linear-gradient(to bottom, $gray-1, $gray-3);
+    }
+
+    &:active {
+      background: $gray-3;
+      background: linear-gradient(to bottom, $gray-3, $gray-3);
+    }
+  }
+}
+
+.input-bar--blue {
+  input {
+    border-color: $blue-3;
+
+    background: $blue-1;
+
+    &::placeholder {
+      color: $blue-3;
+    }
+  }
+
+  button {
+    border-color: $blue;
+
+    background: $blue-1;
+    background: linear-gradient(to bottom, $blue-1, $blue-1);
+    color: $blue;
+
+    @include on-event {
+      color: $blue-5;
+      background: $blue-2;
+      background: linear-gradient(to bottom, $blue-1, $blue-3);
+    }
+
+    &:active {
+      background: $blue-3;
+      background: linear-gradient(to bottom, $blue-3, $blue-3);
+    }
+  }
+}
+
+.input-bar--success {
+  input {
+    border-color: $green-3;
+
+    background: $green-1;
+
+    &::placeholder {
+      color: $green-3;
+    }
+  }
+
+  button {
+    border-color: $green-3;
+
+    background: $green-1;
+    background: linear-gradient(to bottom, $green-1, $green-1);
+    color: $green-3;
+
+    &:after {
+      content: '\f00c'; // check mark
+    }
+
+    @include on-event {
+      color: $green-5;
+      background: $green-2;
+      background: linear-gradient(to bottom, $green-1, $green);
+    }
+
+    &:active {
+      background: $green-3;
+      background: linear-gradient(to bottom, $green-3, $green-3);
+    }
+  }
+}
+
+.input-bar--warning {
+  input {
+    border-color: $warning;
+
+    background: lighten($warning, 30%);
+
+    &::placeholder {
+      color: $warning;
+    }
+  }
+
+  button {
+    border-color: $warning;
+
+    background: lighten($warning, 30%);
+    background: linear-gradient(to bottom, lighten($warning, 30%), lighten($warning, 30%));
+    color: darken($warning, 10%);
+
+    &:after {
+      content: '\f12a'; // exclamation point
+    }
+
+    @include on-event {
+      color: darken($warning, 10%);
+      background: lighten($warning, 10%);
+      background: linear-gradient(to bottom, lighten($warning, 30%), $warning);
+    }
+
+    &:active {
+      background: $warning;
+      background: linear-gradient(to bottom, $warning, $warning);
+    }
+  }
+}
+
+.input-bar--fail {
+  input {
+    border-color: $fail;
+
+    background: lighten($fail, 25%);
+
+    &::placeholder {
+      color: $fail;
+    }
+  }
+
+  button {
+    border-color: $fail;
+
+    background: lighten($fail, 25%);
+    background: linear-gradient(to bottom, lighten($fail, 25%), lighten($fail, 25%));
+    color: $fail;
+
+    &:after {
+      content: '\f071'; // warning sign (exclamation point in triangle)
+    }
+
+    @include on-event {
+      color: darken($fail, 20%);
+      background: lighten($fail, 10%);
+      background: linear-gradient(to bottom, lighten($fail, 25%), $fail);
+    }
+
+    &:active {
+      background: $fail;
+      background: linear-gradient(to bottom, $fail, $fail);
+    }
+  }
+}
+
+.input-bar--search {
+  button {
+    &:after {
+      content: '\f002'; // magnifying glass
+    }
+  }
+}
+
+.input-bar--email {
+  button {
+    &:after {
+      content: '\f0e0'; // envelope
+    }
+  }
+}
+
+.input-bar--send {
+  button {
+    &:after {
+      content: '\f1d8'; // paper airplane
+    }
+  }
+}

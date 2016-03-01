@@ -1,0 +1,154 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for the button component.
+// -----------------------------------------------------------------------------
+// Standard buttons have a slight vertical gradient on hover, that falls back to solid. By default they are blue, but they can be made a different color by including a modifier class, e.g.:
+// <button class="btn btn--success>Success</button>
+// Contains extra linear-gradients to avoid paint flashes when hovered & active.
+// link: http://codepen.io/lowmess/full/WvYaZG/
+
+.btn {
+  @include font(heading-text);
+
+  padding: $gutter*0.75 $gutter*1.75;
+
+  background: $blue-3;
+  background: linear-gradient(to bottom, $blue-3, $blue-3);
+
+  border-radius: 7px;
+  border: 1px solid;
+
+  color: $white;
+  border-color: $blue-5;
+
+  cursor: pointer;
+
+  &:after {
+    @include font(symbol);
+
+    content: '\f0da';
+
+    padding-left: $gutter;
+  }
+
+  @include on-event {
+    background: $blue-4;
+    background: linear-gradient(to bottom, $blue-3, $blue-5);
+
+    border-color: $blue-5;
+  }
+
+  &:active {
+    background: $blue-5;
+    background: linear-gradient(to bottom, $blue-5, $blue-5);
+
+    color: $white;
+  }
+
+  &--reverse {
+    &:before {
+      @include font(symbol);
+
+      content: '\f0d9';
+
+      padding-right: $gutter;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &--white {
+    background: $white;
+    background: linear-gradient(to bottom, $white, $white);
+
+    color: $blue;
+    border-color: $gray-1;
+
+    @include on-event {
+      background: $gray-1;
+      background: linear-gradient(to bottom, $white, $gray-1);
+
+      border-color: $gray-1;
+    }
+
+    &:active {
+      background: $gray-1;
+      background: linear-gradient(to bottom, $gray-1, $gray-1);
+
+      color: $blue;
+    }
+  }
+
+  &--success {
+    background: $green-3;
+    background: linear-gradient(to bottom, $green-3, $green-3);
+
+    color: $white;
+    border-color: $green-5;
+
+    @include on-event {
+      background: $green-4;
+      background: linear-gradient(to bottom, $green-3, $green-5);
+
+      border-color: $green-5;
+    }
+
+    &:active {
+      background: $green-5;
+      background: linear-gradient(to bottom, $green-5, $green-5);
+
+      color: $white;
+    }
+  }
+
+  &--warning {
+    background: $warning;
+    background: linear-gradient(to bottom, $warning, $warning);
+
+    color: $white;
+    border-color: darken($warning, 10%);
+
+    @include on-event {
+      background: darken($warning, 5%);
+      background: linear-gradient(to bottom, $warning, darken($warning, 10%));
+
+      border-color: darken($warning, 10%);
+    }
+
+    &:active {
+      background: darken($warning, 10%);
+      background: linear-gradient(to bottom, darken($warning, 10%), darken($warning, 10%));
+
+      color: $white;
+    }
+  }
+
+  &--fail {
+    background: $fail;
+    background: linear-gradient(to bottom, $fail, $fail);
+
+    color: $white;
+    border-color: darken($fail, 20%);
+
+    @include on-event {
+      background: darken($fail, 10%);
+      background: linear-gradient(to bottom, $fail, darken($fail, 20%));
+
+      border-color: darken($fail, 20%);
+    }
+
+    &:active {
+      background: darken($fail, 20%);
+      background: linear-gradient(to bottom, darken($fail, 20%), darken($fail, 20%));
+
+      color: $white;
+    }
+  }
+}
+button {
+  @extend .btn;
+}
+button.btn {
+  padding: $gutter*0.5 $gutter*1.75;
+}

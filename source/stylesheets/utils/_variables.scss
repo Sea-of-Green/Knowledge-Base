@@ -1,0 +1,160 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// COLOR
+// =====
+// Colors' primary shade is $color-3, or $color for shorthand. Secondary shades are $color-1 and $color-5, and are primarily used for hover or state changes. Tertiery shades are $color-2 and $color-4 and are primarily for optical adjustments when placed on a non-white background.
+// Greyscale shades are similar, except the main shade is $gray-2 and $gray-1 & $gray-3 are tertiery.
+
+$white: #ffffff;
+$black: #212620;
+
+$gray: #aea198;
+$gray-1: #e5e1db;
+$gray-2: #c1b8af;
+$gray-3: $gray;
+$gray-4: #7b6d65;
+$gray-5: #60504c;
+
+$yellow: #ffdb00;
+$yellow-1: #fbe343;
+$yellow-2: #fee01e;
+$yellow-3: $yellow;
+$yellow-4: #ffd100;
+$yellow-5: #dba900;
+
+$green: #77bc1f;
+$green-1: #b7dc78;
+$green-2: #a3d55d;
+$green-3: $green;
+$green-4: #62a60a;
+$green-5: #648b1a;
+
+$blue: #0091b2;
+$blue-1: #76c3d4;
+$blue-2: #3ab0c8;
+$blue-3: $blue;
+$blue-4: #007197;
+$blue-5: #005c82;
+
+$brand-primary: $blue;
+
+$success: $green;
+$warning: $yellow-5;
+$fail: #ff4337;
+
+// TYPOGRAPHY
+// ==========
+
+$modular-scale-base: 1rem;
+$measure: 50rem;
+
+// Small font sizes
+
+$modular-scale-ratio: $augmented-fourth;
+
+$base-font-size: modular-scale(0);
+
+$h1-font-size: modular-scale(3);
+
+$h2-font-size: modular-scale(2);
+
+$h3-font-size: modular-scale(1);
+
+$h4-font-size: modular-scale(0);
+
+$small-font-size: modular-scale(-1);
+
+// Line Heights
+
+$base-line-height: 1.75rem;
+
+$h1-line-height: $base-line-height * 2;
+
+$h2-line-height: $base-line-height * 2;
+
+$h3-line-height: $base-line-height;
+
+$h4-line-height: $base-line-height;
+
+$small-line-height: $base-line-height * 0.5;
+
+
+// FONT-STACKS
+// ===========
+
+$heading-text: "Overlook", "ATC Overlook", "ATCOverlook", $helvetica;
+// fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic
+$body-text: "Droid Serif", "DroidSerif", $georgia;
+// cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css
+$symbol: 'Font Awesome', FontAwesome;
+
+// GRID SETTINGS
+// =============
+
+$gutter: $base-font-size !global;
+$max-width: $measure !global;
+
+// NAV SETTINGS
+// ============
+
+$nav-width: rem(275);
+$nav-height: 3.5rem;
+
+// ============
+// LISTS & MAPS
+// ============
+
+// BREAKPOINTS
+// ===========
+
+$breakpoints: (
+  tiny: "(max-width: 29.99rem)",
+  small: "(min-width: 30rem)",
+  only-small: "(min-width: 30rem) and (max-width: 39.99rem)",
+  medium: "(min-width: 40rem)",
+  only-medium: "(min-width: 40rem) and (max-width: 63.99rem)",
+  not-medium: "(max-width: 39.99rem)",
+  large: "(min-width: 64rem)",
+  only-large: "(min-width: 64rem) and (max-width: 89.99rem)",
+  not-large: "(max-width: 63.99rem)",
+  xlarge: "(min-width: 90rem)",
+  huge: "(min-width: 120rem)"
+);
+
+// Z-INDEX
+// =======
+// A running list of z-indexii. Used with @function z.
+
+$zindex: (
+  background: 0,
+
+  nav: 1000,
+);
+
+// FONTS
+// =====
+// Font grouping for shorthand calls. Use with the 'font' mixin to call a font, e.g.:
+// .component { @include font(heading-text, bold-italic); }
+
+$font-stack:
+
+  (group: heading-text, id: regular, font: $heading-text, weight: 400, style: normal),
+  (group: heading-text, id: regular-italic, font: $heading-text, weight: 400, style: italic),
+  (group: heading-text, id: medium, font: $heading-text, weight: 500, style: normal),
+  (group: heading-text, id: medium-italic, font: $heading-text, weight: 500, style: italic),
+  (group: heading-text, id: bold, font: $heading-text, weight: 700, style: normal),
+  (group: heading-text, id: bold-italic, font: $heading-text, weight: 700, style: italic),
+
+  (group: body-text, id: regular, font: $body-text, weight: 400, style: normal),
+  (group: body-text, id: regular-italic, font: $body-text, weight: 400, style: italic),
+  (group: body-text, id: bold, font: $body-text, weight: 700, style: normal),
+  (group: body-text, id: bold-italic, font: $body-text, weight: 700, style: italic),
+
+  (group: monospace, id: regular, font: $monospace, weight: 400, style: normal),
+  (group: monospace, id: regular-italic, font: $monospace, weight: 400, style: italic),
+  (group: monospace, id: bold, font: $monospace, weight: 700, style: normal),
+  (group: monospace, id: bold-italic, font: $monospace, weight: 700, style: italic),
+
+  (group: symbol, id: regular, font: $symbol, weight: 400, style: normal);

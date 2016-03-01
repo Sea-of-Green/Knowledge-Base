@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the footer.
+// -----------------------------------------------------------------------------
+// HTML:
+// <footer>
+//   <div class="footer__content">...</div>
+// </footer>
+
+// General footer styles
+footer {
+  @include fill-parent;
+  @include font(heading-text);
+
+  margin-top: $gutter;
+  padding: $gutter 0 $h3-font-size 0;
+
+  background: $blue;
+  background: linear-gradient(to bottom, $blue, $blue-5);
+  color: $white;
+  a {
+    color: $white;
+    &:visited {
+      color: $white;
+    }
+    @include on-event {
+      color: $blue-1;
+      border: none;
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+.footer__content {
+  @include outer-container;
+  padding: 0 $gutter;
+}
+
+// Specific footer styles
+.footer {
+  &__lists {
+    text-align: center;
+    @include respond-to(small) {
+      @include row;
+
+      text-align: left;
+    }
+  }
+  &__list {
+    @include respond-to(small) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+  &__social {
+    margin: $base-line-height*2 0;
+    @include respond-to(small) {
+      margin: $base-line-height 0;
+    }
+    @include respond-to(medium) {
+      @include row;
+    }
+  }
+  &__social-icons {
+    font-size: $h3-font-size;
+    text-align: center;
+
+    @include respond-to(medium) {
+      @include span-columns(6);
+
+      text-align: left;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: $h2-font-size;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  &__newsletter-signup {
+    @include respond-to(medium) {
+      @include span-columns(6);
+      @include omega;
+    }
+  }
+  &__copyright {
+    text-align: center;
+    @include respond-to(small) {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for the blockquote component.
+// -----------------------------------------------------------------------------
+
+.blockquote {
+  position: relative;
+
+  padding: 0 $gutter;
+
+  border-left: 5px solid $gray-1;
+
+  p {
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  cite, & + cite {
+    display: block;
+
+    text-align: right;
+
+    &:before {
+      content: "\2014\0020";
+    }
+  }
+
+  &:before {
+    @include font(symbol);
+
+    position: absolute;
+    top: 1.25rem; left: -2.5rem;
+
+    font-size: $h3-font-size;
+    line-height: 0;
+    color: $gray-1;
+  }
+}
+
+blockquote {
+  @extend .blockquote;
+}
+
+blockquote:before {
+  content: "\f10d";
+}
+
+.blockquote:before {
+  content: "\f10d";
+}
+
+.blockquote--no-quote:before {
+  display: none;
+}
+
+.blockquote--question:before {
+  content: "\f128";
+}
+
+.blockquote--answer:before {
+  content: "\f075";
+}
